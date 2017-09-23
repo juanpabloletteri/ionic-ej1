@@ -10,18 +10,20 @@ import { AplicacionPage } from '../pages/aplicacion/aplicacion';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 // AF2 Settings
 export const firebaseConfig = {
-  apiKey: "AIzaSyB1u1dAwh3i4-aGP4y7Pkr5a9PvTFI-pxU",
-  authDomain: "datos-c5776.firebaseapp.com",
-  databaseURL: "https://datos-c5776.firebaseio.com",
-  projectId: "datos-c5776",
-  storageBucket: "datos-c5776.appspot.com",
-  messagingSenderId: "221623210190"
+  apiKey: "AIzaSyAUoPbRmwZADYuQleKpFeAy9dAskkC4gHY",
+  authDomain: "ej04-c1eeb.firebaseapp.com",
+  databaseURL: "https://ej04-c1eeb.firebaseio.com",
+  projectId: "ej04-c1eeb",
+  storageBucket: "",
+  messagingSenderId: "286652171874"
 };
 
 @NgModule({
@@ -47,6 +49,7 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
+    Camera,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
