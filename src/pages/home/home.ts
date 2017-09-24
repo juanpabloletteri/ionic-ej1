@@ -21,16 +21,24 @@ export class HomePage {
 
   usuarios: FirebaseListObservable<any>;
 
+  posicion: number = 0;
+
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, db: AngularFireDatabase, ) {
     this.usuarios = db.list('/usuarios');
     console.log(this.usuarios);
   }
   login() {
+
+    if (this.posicion < 3) {
+      this.posicion++;
+      return;
+    }
+
     this.usuarios.forEach(element => {
       for (var i = 0; i < 5; i++) {
         if (element[i].nombre == this.usuario && element[i].clave == this.pass) {
           //SE ENCONTRO USUARIO
-
+          this.posicion = 0;
           //Redirijo a la pagina correspondiente
           this.navCtrl.push(AplicacionPage, { "usuario": this.usuario, "email": this.email });
           return;
